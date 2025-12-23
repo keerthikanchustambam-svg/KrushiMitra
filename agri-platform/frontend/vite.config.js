@@ -11,6 +11,11 @@ export default defineConfig({
     port: Number(process.env.PORT) || 5173,
     // let Vite fail if the requested port is in use (Render expects the assigned port)
     strictPort: true,
+    // Allow Render deployment host to access the dev server
+    allowedHosts: [
+      'krushimitra-6mgd.onrender.com',
+      '.onrender.com' // Allow all Render subdomains for flexibility
+    ],
   },
   // preview options used by `vite preview` (serve built files)
   preview: {
