@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: krushimitra-backend
+    env: python
+    branch: main
+    plan: free
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "gunicorn app:app --chdir backend --bind 0.0.0.0:$PORT --workers 2"
+    autoDeploy: true
+    envVars:
+      - key: WEATHER_API_KEY
+        sync: false
+      - key: MARKET_API_KEY
+        sync: false
+
+  - type: web
+    name: krushimitra-frontend
+    env: node
+    branch: main
+    plan: free
+    buildCommand: "cd frontend && npm install && npm run build"
+    startCommand: "cd frontend && npm run start"
+    autoDeploy: true
+    envVars: []

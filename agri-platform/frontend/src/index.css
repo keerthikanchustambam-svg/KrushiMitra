@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Premium Earthy Palette */
+  --color-primary: #2D6A4F;    /* Deep Forest Green */
+  --color-secondary: #40916C;  /* Medium Green */
+  --color-accent: #D8F3DC;     /* Pale Mint */
+  --color-highlight: #95D5B2;  /* Soft Green */
+  --color-bg: #F4F1DE;         /* Cream / Off-white */
+  --color-text-main: #1B4332;  /* Dark Jungle Green */
+  --color-text-light: #52B788; /* Lighter Green Text */
+  --color-white: #FFFFFF;
+  --color-warning: #E07A5F;    /* Terra Cotta */
+  
+  /* Shadows & Glassmorphism */
+  --shadow-sm: 0 2px 4px rgba(45, 106, 79, 0.1);
+  --shadow-md: 0 4px 12px rgba(45, 106, 79, 0.15);
+  --shadow-lg: 0 8px 24px rgba(45, 106, 79, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+
+  /* Spacing */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(0,0,0,0.02);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--color-secondary);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  border-radius: var(--radius-lg);
+}
